@@ -1,7 +1,14 @@
 import * as React from 'react';
 
 export interface TabProps {
+    /**
+     * Tab panel class name
+     */
     className?:string; 
+
+    /**
+     * The title name of the tab button
+     */
     title: string | React.ReactNode;
 }
 
@@ -25,7 +32,7 @@ export class Tab extends React.Component<TabProps, TabState>{
 
     render() {
         const {props, state} = this; 
-        
+
         return <div className={`tab-panel ${props.className}`} data-tab-title={this.props.title}>
             {this.props.children}
         </div>
