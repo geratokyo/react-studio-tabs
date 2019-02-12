@@ -1,4 +1,4 @@
-# react-studio-tab
+# react-studio-tabs
 
 A minimalistic react tab component that displays content in tabs. Some default stylings are included in the below link
 
