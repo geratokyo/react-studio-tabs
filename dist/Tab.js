@@ -25,7 +25,7 @@ var Tab = (function (_super) {
     }
     Tab.prototype.render = function () {
         var _a = this, props = _a.props, state = _a.state;
-        return React.createElement("div", { className: "tab-panel " + props.className, "data-tab-title": this.props.title }, this.props.children);
+        return React.createElement("div", { className: "tab-panel " + props.className, style: props.style, "data-tab-title": this.props.title }, this.props.children);
     };
     Tab.defaultProps = {
         className: ""

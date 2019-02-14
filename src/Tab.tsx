@@ -10,6 +10,8 @@ export interface TabProps {
      * The title name of the tab button
      */
     title: string | React.ReactNode;
+
+    style:any;
 }
 
 export interface TabState {
@@ -33,7 +35,7 @@ export class Tab extends React.Component<TabProps, TabState>{
     render() {
         const {props, state} = this; 
 
-        return <div className={`tab-panel ${props.className}`} data-tab-title={this.props.title}>
+        return <div className={`tab-panel ${props.className}`} style={props.style}data-tab-title={this.props.title}>
             {this.props.children}
         </div>
     }

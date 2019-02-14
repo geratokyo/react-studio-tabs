@@ -8,6 +8,7 @@ export interface TabsProps {
     onInitialTabChange?: (currentIdx: number) => void;
     afterTabChange?: (currentIdx: number, prevIdx: number) => void;
     onTabClicked?: (idx?: number, prevIdx?: number) => void;
+    isSeoFriendly?: boolean;
 }
 export interface TabsState {
     currentTabIdx: number;

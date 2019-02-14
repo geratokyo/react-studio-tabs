@@ -18,6 +18,8 @@ A minimalistic react tab component that displays content in tabs. Some default s
 |onInitialTabChange?|currentIdx:number)=>void|Function that is being triggered when the initialTab is changed|
 |afterTabChange?|(currentIdx:number, prevIdx:number)=>void|Function that is being triggered after the index is changed|
 |onTabClicked?|(idx?:number, prevIdx?:number)=>void|Function that is being triggered when the tab indexed is being changed|
+|isSeoFriendly?|boolean|If set to true the display of the current tab will be based on css styles instead of render options|
+
 
 ## Tabs Default Props
 |Name|Value|
@@ -29,6 +31,7 @@ A minimalistic react tab component that displays content in tabs. Some default s
 |className|""|
 |contentClassName|""|
 |liClassName|""|
+|isSeoFriendly|false|
 
 
 ## Tab Props

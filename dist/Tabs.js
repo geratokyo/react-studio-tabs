@@ -12,6 +12,17 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
 var Tabs = (function (_super) {
@@ -61,7 +72,13 @@ var Tabs = (function (_super) {
                 return React.createElement("li", { className: "tabs__item " + props.liClassName + " " + (state.currentTabIdx === i ? "tabs__item--active" : ""), onClick: function () { _this.setTab(i); } },
                     React.createElement("a", null, x.props.title));
             })),
-            React.createElement("div", { className: "tabs__content " + props.contentClassName }, this.props.children[state.currentTabIdx])));
+            React.createElement("div", { className: "tabs__content " + props.contentClassName }, !props.isSeoFriendly &&
+                this.props.children[state.currentTabIdx]
+                ||
+                    React.Children.map(this.props.children, function (child, i) {
+                        console.log("s", i, state.currentTabIdx);
+                        return React.cloneElement(child, __assign({}, child.props, { style: { "display": (state.currentTabIdx === i ? "block" : "none") } }));
+                    }))));
     };
     Tabs.defaultProps = {
         onTabClicked: function () { },
@@ -70,7 +87,8 @@ var Tabs = (function (_super) {
         ulClassName: "",
         className: "",
         contentClassName: "",
-        liClassName: ""
+        liClassName: "",
+        isSeoFriendly: false
     };
     return Tabs;
 }(React.Component));

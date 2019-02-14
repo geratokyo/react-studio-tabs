@@ -42,6 +42,11 @@ export interface TabsProps{
      * Function that is being triggered when the tab indexed is being changed
      */
     onTabClicked?:(idx?:number, prevIdx?:number)=>void;
+
+    /**
+     * If set to true the display of the current tab will be based on css styles instead of render options
+     */
+    isSeoFriendly?:boolean;
 }
 
 export interface TabsState{
@@ -63,7 +68,8 @@ export class Tabs extends React.Component<TabsProps, TabsState>{
         ulClassName:"", 
         className:"", 
         contentClassName:"",
-        liClassName:""
+        liClassName:"", 
+        isSeoFriendly:false
     }
 
     componentDidMount(){
@@ -121,8 +127,17 @@ export class Tabs extends React.Component<TabsProps, TabsState>{
                     }
                 </ul>
                 <div className={`tabs__content ${props.contentClassName}`}>
-                    {
+                    {   
+                        !props.isSeoFriendly &&
                         this.props.children[state.currentTabIdx]
+                        ||
+                        React.Children.map(this.props.children, (child: React.ReactElement<any>, i) => {
+                            console.log("s",i, state.currentTabIdx)
+                            return React.cloneElement(child, {
+                                ...child.props,
+                                style:{"display":(state.currentTabIdx === i ? "block" : "none")}
+                            })
+                        })
                     }
                 </div>
             </div>

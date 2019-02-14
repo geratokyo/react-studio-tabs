@@ -2,6 +2,7 @@ import * as React from 'react';
 export interface TabProps {
     className?: string;
     title: string | React.ReactNode;
+    style: any;
 }
 export interface TabState {
 }
