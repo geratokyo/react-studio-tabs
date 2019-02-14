@@ -25,6 +25,8 @@ var __assign = (this && this.__assign) || function () {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
+var bem_class_gen_1 = require("bem-class-gen");
+var cls = bem_class_gen_1.B();
 var Tabs = (function (_super) {
     __extends(Tabs, _super);
     function Tabs(p) {
@@ -46,6 +48,10 @@ var Tabs = (function (_super) {
         };
         return _this;
     }
+    Tabs.getDerivedStateFromProps = function (props, state) {
+        cls.bl(props.bemClassName);
+        return null;
+    };
     Tabs.prototype.componentDidMount = function () {
         this.setState({
             currentTabIdx: this.props.initialTab || 0
@@ -67,16 +73,16 @@ var Tabs = (function (_super) {
     Tabs.prototype.render = function () {
         var _this = this;
         var props = this.props, state = this.state;
-        return (React.createElement("div", { className: "tabs " + props.className },
-            React.createElement("ul", { className: "tabs__menu " + props.ulClassName }, React.Children.map(this.props.children, function (x, i) {
-                return React.createElement("li", { className: "tabs__item " + props.liClassName + " " + (state.currentTabIdx === i ? "tabs__item--active" : ""), onClick: function () { _this.setTab(i); } },
+        console.log("gege");
+        return (React.createElement("div", { className: cls.bem + " " + props.className },
+            React.createElement("ul", { className: cls.el('menu').bem + " " + props.ulClassName }, React.Children.map(this.props.children, function (x, i) {
+                return React.createElement("li", { className: cls.el("item").bem + " " + props.liClassName + " " + (state.currentTabIdx === i ? cls.el("item").mod("active").bem : ""), onClick: function () { _this.setTab(i); } },
                     React.createElement("a", null, x.props.title));
             })),
-            React.createElement("div", { className: "tabs__content " + props.contentClassName }, !props.isSeoFriendly &&
+            React.createElement("div", { className: cls.el("content").bem + " " + props.contentClassName }, !props.isSeoFriendly &&
                 this.props.children[state.currentTabIdx]
                 ||
                     React.Children.map(this.props.children, function (child, i) {
-                        console.log("s", i, state.currentTabIdx);
                         return React.cloneElement(child, __assign({}, child.props, { style: { "display": (state.currentTabIdx === i ? "block" : "none") } }));
                     }))));
     };
@@ -84,6 +90,7 @@ var Tabs = (function (_super) {
         onTabClicked: function () { },
         onInitialTabChange: function () { },
         afterTabChange: function () { },
+        bemClassName: "tabs",
         ulClassName: "",
         className: "",
         contentClassName: "",

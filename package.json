@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/geratokyo/react-studio-tabs#readme",
   "dependencies": {
+    "bem-class-gen": "^1.0.2",
     "lodash": "^4.17.11",
     "react": "^16.8.1"
   },

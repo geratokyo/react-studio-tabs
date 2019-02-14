@@ -1,5 +1,6 @@
 import * as React from 'react';
 export interface TabsProps {
+    bemClassName?: string;
     className?: string;
     ulClassName?: string;
     liClassName?: string;
@@ -16,6 +17,7 @@ export interface TabsState {
 export declare class Tabs extends React.Component<TabsProps, TabsState> {
     constructor(p: TabsProps);
     static defaultProps: Partial<TabsProps>;
+    static getDerivedStateFromProps(props: any, state: any): any;
     componentDidMount(): void;
     componentWillUpdate(nextProps: TabsProps, nextState: TabsState): void;
     componentDidUpdate(prevProps: TabsProps, prevState: TabsState): void;
