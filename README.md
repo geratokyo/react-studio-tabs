@@ -10,6 +10,7 @@ A minimalistic react tab component that displays content in tabs. Some default s
 ----
 |Name|Type|Descriptions|
 |-----|------|---|
+|bemClassName?|string|Main bem class name|
 |className?|string|Main element class name|
 |ulClassName?|string|The class name of the ul list|
 |liClassName?|string|The class name of the list element|
@@ -29,6 +30,7 @@ A minimalistic react tab component that displays content in tabs. Some default s
 |afterTabChange|()=>{}|
 |ulClassName|""|
 |className|""|
+|bemClassName|"tabs"|
 |contentClassName|""|
 |liClassName|""|
 |isSeoFriendly|false|
