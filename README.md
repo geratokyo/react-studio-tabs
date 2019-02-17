@@ -2,7 +2,11 @@
 
 A minimalistic react tab component that displays content in tabs. Some default stylings are included in the below link
 
-* [style.css](https://github.com/geratokyo/react-studio-tabs/blob/master/examples/style.css)
+## Links 
+* [npm](https://www.npmjs.com/package/react-studio-tabs)
+* [github](https://github.com/geratokyo/react-studio-tabs#readme)
+* [Tutorial](https://roobley.com/add-tabs-to-your-app-using-react-studio-tabs)
+* Simple [style.css](https://github.com/geratokyo/react-studio-tabs/blob/master/examples/style.css)
 
 ----
 

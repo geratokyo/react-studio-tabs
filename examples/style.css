@@ -15,7 +15,7 @@
   text-align: center;
   position: relative;
 }
-/* line 19, ../src/style.scss */
+/* line 20, ../src/style.scss */
 .tabs__item:after {
   content: "";
   position: absolute;
@@ -26,15 +26,15 @@
   background-color: rgba(255, 255, 255, 0.2);
   display: none;
 }
-/* line 30, ../src/style.scss */
+/* line 31, ../src/style.scss */
 .tabs__item a {
   color: white;
 }
-/* line 33, ../src/style.scss */
-.tabs__item:hover {
+/* line 34, ../src/style.scss */
+.tabs__item:hover, .tabs__item--active {
   cursor: pointer;
 }
-/* line 35, ../src/style.scss */
-.tabs__item:hover:after {
+/* line 36, ../src/style.scss */
+.tabs__item:hover:after, .tabs__item--active:after {
   display: block;
 }
