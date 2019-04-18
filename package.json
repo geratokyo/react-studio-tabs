@@ -1,6 +1,6 @@
 {
   "name": "react-studio-tabs",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "A react tabs component that displays a list of items in a numbered page",
   "main": "dist/index.js",
   "types": "./dist/index.d.ts",
