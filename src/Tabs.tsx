@@ -133,9 +133,9 @@ export class Tabs extends React.Component<TabsProps, TabsState>{
                         React.Children.map(this.props.children, (x, i) => {
                             return <li className={`${cls.el("item").bem} ${props.liClassName} ${(state.currentTabIdx === i ? cls.el("item").mod("active").bem : "")}`}
                                 onClick={() => { this.setTab(i) }}>
-                                <a>
+                                <span>
                                     {(x as any).props.title}
-                                </a>
+                                </span>
                             </li>
                         })
                     }

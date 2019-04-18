@@ -76,7 +76,7 @@ var Tabs = (function (_super) {
         return (React.createElement("div", { className: cls.bem + " " + props.className },
             React.createElement("ul", { className: cls.el('menu').bem + " " + props.ulClassName }, React.Children.map(this.props.children, function (x, i) {
                 return React.createElement("li", { className: cls.el("item").bem + " " + props.liClassName + " " + (state.currentTabIdx === i ? cls.el("item").mod("active").bem : ""), onClick: function () { _this.setTab(i); } },
-                    React.createElement("a", null, x.props.title));
+                    React.createElement("span", null, x.props.title));
             })),
             React.createElement("div", { className: cls.el("content").bem + " " + props.contentClassName }, !props.isSeoFriendly &&
                 this.props.children[state.currentTabIdx]
