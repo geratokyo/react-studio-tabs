@@ -24,5 +24,6 @@ export declare class Tabs extends React.Component<TabsProps, TabsState> {
     onInitialTabChange: () => void;
     afterTabChange: (prevIdx: number) => void;
     setTab: (idx: number) => void;
+    getTitle: (title: React.ReactNode) => JSX.Element;
     render(): JSX.Element;
 }

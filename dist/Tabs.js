@@ -43,6 +43,17 @@ var Tabs = (function (_super) {
                 currentTabIdx: idx
             });
         };
+        _this.getTitle = function (title) {
+            if (/^/.test(title)) {
+                return React.createElement("span", { dangerouslySetInnerHTML: { __html: title } });
+            }
+            else if (typeof title === "string") {
+                return React.createElement("span", null, title);
+            }
+            else if (React.isValidElement(title)) {
+                return title;
+            }
+        };
         _this.state = {
             currentTabIdx: 0
         };
@@ -75,8 +86,7 @@ var Tabs = (function (_super) {
         var props = this.props, state = this.state;
         return (React.createElement("div", { className: cls.bem + " " + props.className },
             React.createElement("ul", { className: cls.el('menu').bem + " " + props.ulClassName }, React.Children.map(this.props.children, function (x, i) {
-                return React.createElement("li", { className: cls.el("item").bem + " " + props.liClassName + " " + (state.currentTabIdx === i ? cls.el("item").mod("active").bem : ""), onClick: function () { _this.setTab(i); } },
-                    React.createElement("span", null, x.props.title));
+                return React.createElement("li", { className: cls.el("item").bem + " " + props.liClassName + " " + (state.currentTabIdx === i ? cls.el("item").mod("active").bem : ""), onClick: function () { _this.setTab(i); } }, _this.getTitle(x.props.title));
             })),
             React.createElement("div", { className: cls.el("content").bem + " " + props.contentClassName }, !props.isSeoFriendly &&
                 this.props.children[state.currentTabIdx]

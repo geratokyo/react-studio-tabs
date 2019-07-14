@@ -123,6 +123,16 @@ export class Tabs extends React.Component<TabsProps, TabsState>{
         })
     }
 
+    getTitle = (title: string | React.ReactNode)=>{
+        if(/^/.test(title as string)){
+            return <span dangerouslySetInnerHTML={{__html:title as string}}></span>
+        }else if(typeof title === "string"){
+            return <span>{title}</span>
+        }else if(React.isValidElement(title)){
+            return title; 
+        }
+    }
+
     render() {
         let props = this.props,
             state = this.state;
@@ -133,9 +143,9 @@ export class Tabs extends React.Component<TabsProps, TabsState>{
                         React.Children.map(this.props.children, (x, i) => {
                             return <li className={`${cls.el("item").bem} ${props.liClassName} ${(state.currentTabIdx === i ? cls.el("item").mod("active").bem : "")}`}
                                 onClick={() => { this.setTab(i) }}>
-                                <span>
-                                    {(x as any).props.title}
-                                </span>
+                                    {
+                                        this.getTitle((x as any).props.title)
+                                    }
                             </li>
                         })
                     }
