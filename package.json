@@ -27,12 +27,12 @@
   "homepage": "https://github.com/geratokyo/react-studio-tabs#readme",
   "dependencies": {
     "bem-class-gen": "^1.0.2",
-    "lodash": "^4.17.11",
-    "react": "^16.8.1"
+    "lodash": "^4.17.14",
+    "react": "^16.8.6"
   },
   "devDependencies": {
-    "@types/lodash": "^4.14.120",
-    "@types/react": "^16.8.2",
-    "@types/react-dom": "^16.8.0"
+    "@types/lodash": "^4.14.136",
+    "@types/react": "^16.8.23",
+    "@types/react-dom": "^16.8.4"
   }
 }
